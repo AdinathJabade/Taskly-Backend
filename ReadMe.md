@@ -1,14 +1,12 @@
 # **Taskly-Backend**
 
-```markdown
-- Backend API: [https://Taskly-Backend.onrender.com](https://Taskly-Backend.onrender.com)
 
 
-# Taskly–Backend
 
 **MyTodo App Backend** handles user authentication and task management for the MyTodo application. It is built with **Node.js, Express, and MongoDB**.
 
 ---
+
 
 ## **Features**
 
@@ -32,12 +30,19 @@
 ## **Folder Structure**
 
 Taskly-Backend/
+
 ├── server.js # Main server file
+
 ├── package.json # Dependencies
+
 ├── routes/ # API routes
+
 ├── controllers/ # Business logic
+
 ├── models/ # Database models
+
 ├── .env # Environment variables
+
 └── .gitignore
 
 yaml
@@ -47,8 +52,10 @@ Copy code
 
 ## **Environment Variables (.env)**
 
-PORT=5000
-MONGO_URI=<your-mongodb-atlas-uri>
+PORT=5000 
+
+MONGO_URI= <your-mongodb-atlas-uri>
+
 JWT_SECRET=<your-secret-key>
 
 yaml
@@ -58,7 +65,7 @@ Copy code
 
 ## **Installation & Usage**
 
-1. Clone the backend repo:
+1.Clone the backend repo:
 ```bash
 git clone https://github.com/<AdinathJabade>/Taskly-Backend.git
 cd Taskly-Backend
