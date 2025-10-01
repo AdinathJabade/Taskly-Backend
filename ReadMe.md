@@ -1,124 +1,95 @@
-# **Taskly-Backend**
 
 
 
+# Taskly Backend
 
-**MyTodo App Backend** handles user authentication and task management for the MyTodo application. It is built with **Node.js, Express, and MongoDB**.
+Taskly is a backend API for managing users and their todos, built with Node.js, Express, and MongoDB. It provides authentication and CRUD operations for todo items.
 
----
+## Features
+- User registration and login (JWT authentication)
+- Create, read, update, and delete todos
+- Authentication middleware
+- RESTful API structure
 
-
-## **Features**
-
-- User registration and login with **JWT authentication**
-- Add, delete, and retrieve tasks
-- Each user sees **only their own tasks**
-- Secure APIs for frontend consumption
-
----
-
-## **Tech Stack**
-
-- Node.js
-- Express.js
-- MongoDB Atlas
-- JWT for authentication
-- CORS enabled for frontend connection
-
----
-
-## **Folder Structure**
-
-Taskly-Backend/
-
-├── server.js # Main server file
-
-├── package.json # Dependencies
-
-├── routes/ # API routes
-
-├── controllers/ # Business logic
-
-├── models/ # Database models
-
-├── .env # Environment variables
-
-└── .gitignore
-
-yaml
-Copy code
-
----
-
-## **Environment Variables (.env)**
-
-PORT=5000 
-
-MONGO_URI= <your-mongodb-atlas-uri>
-
-JWT_SECRET=<your-secret-key>
-
-yaml
-Copy code
-
----
-
-## **Installation & Usage**
-
-1.Clone the backend repo:
-```bash
-git clone https://github.com/<AdinathJabade>/Taskly-Backend.git
-cd Taskly-Backend
-Install dependencies:
-
-bash
-Copy code
-npm install
-Start the backend server:
-
-bash
-Copy code
-npm start
-Test the APIs with Postman or connect the frontend.
-
-Deployment
-Push the backend repo to GitHub
-
-Deploy on Render (or any Node.js hosting)
-
-Set environment variables on the platform
-
-Example backend API URL: https://Taskly-Backend.onrender.com
-
-CORS should allow frontend origin:
-
-javascript
-Copy code
-const cors = require("cors");
-app.use(cors({ origin: "https://Taskly-Backend.netlify.app" }));
-Contributing
-Fork the repo
-
-Create a feature branch: git checkout -b feature/YourFeature
-
-Commit changes: git commit -m "Add feature"
-
-Push branch: git push origin feature/YourFeature
-
-Open a pull request
-
-License:
-MIT License
-
-Contact:
-
-GitHub: https://github.com/<AdinathJabade>
-Email: <adijabade5@gmail.com>
-
+## Project Structure
+```
+backend/
+├── index.js
+├── package.json
+├── middleware/
+│   └── auth.js
+├── models/
+│   ├── Todo.js
+│   └── User.js
+├── routes/
+│   ├── auth.js
+│   └── todos.js
 ```
 
-# **MyTodo App – Backend**
+## Getting Started
 
-[![Live Backend](https://img.shields.io/badge/Live-Backend-brightgreen)](https://Taskly-Backend.onrender.com)
+### Prerequisites
+- Node.js (v14 or higher)
+- MongoDB (local or Atlas)
 
-**Taskly App Backend** handles user authentication and task management...
+### Installation
+1. Clone the repository:
+	```powershell
+	git clone <your-repo-url>
+	cd Taskly/backend
+	```
+2. Install dependencies:
+	```powershell
+	npm install
+	```
+3. Set up environment variables:
+	- Create a `.env` file in the `backend` folder:
+	  ```env
+	  MONGO_URI=<your-mongodb-uri>
+	  JWT_SECRET=<your-secret-key>
+	  PORT=5000
+	  ```
+
+### Running the Server
+```powershell
+npm start
+```
+The server runs on `http://localhost:5000` by default.
+
+## API Endpoints
+
+### Auth
+- `POST /api/auth/register` — Register a new user
+- `POST /api/auth/login` — Login and receive a JWT
+
+### Todos
+- `GET /api/todos` — Get all todos for the authenticated user
+- `POST /api/todos` — Create a new todo
+- `PUT /api/todos/:id` — Update a todo
+- `DELETE /api/todos/:id` — Delete a todo
+
+## Screenshots
+
+### Folder Structure
+![Folder Structure](screenshots/folderstructure.png)
+
+### Register API Response Example
+![API Response](screenshots/registerapi.png)
+
+### Login API Response Example
+![API Response](screenshots/loginapi.png)
+
+### GET todo API Response Example
+![API Response](screenshots/gettodoapi.png)
+
+### Add todo API Response Example
+![API Response](screenshots/addtodoapi.png)
+
+
+## Notes
+- This project is **not deployed**. To run locally, follow the instructions above.
+
+## License
+MIT
+
+
